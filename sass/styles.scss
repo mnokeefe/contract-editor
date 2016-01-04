@@ -2,3 +2,39 @@ body {
   margin: 0 auto;
   max-width: 1020px;
 }
+
+// List
+.column-half-all {
+    float: left;
+    width: 50%;
+}
+
+.information-details {
+  list-style: none;
+  padding: 0;
+  li {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0 3rem 0;
+  }
+}
+
+// Sortable
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+
+ul.js-sortable li.placeholder {
+  position: relative;
+  /** More li styles **/
+}
+
+ul.js-sortable li.placeholder:before {
+  position: absolute;
+  /** Define arrowhead **/
+}

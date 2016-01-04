@@ -7,62 +7,126 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/styles.css">
 
-
 </head>
 <body>
   <h1>Contract</h1>
+
   <h2>Schedule</h2>
-  <div id="js-drag-list">
-    <div class="schedule-section">
-      <h3><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Section Title</h3>
-      <ul class="list-group">
-        <li class="list-group-item"><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Drag my handle</li>
-        <li class="list-group-item"><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Select text freely</li>
-        <li class="list-group-item"><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Best of both worlds</li>
-      </ul>
 
-      <table class="table table-hover" id="drag-table">
-        <tr>
-          <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
-          <td>Label</td>
-          <td>Entry</td>
-        </tr>
-        <tr>
-          <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
-          <td>Label</td>
-          <td>Entry</td>
-        </tr>
-      </table>
+  <div class="grouping" id="dragItem">
+		<h2>Agency Information</h2>
+		<ul class="information-details">
+			<li>
+				<span class="column-half-all title">
+          <span class="glyphicon glyphicon-move" aria-hidden="true"></span>
+          Agency name (the "
+					<strong>Agency</strong>")
+        </span>
+				<strong class="column-half-all info ng-binding">MOK</strong>
+			</li>
+			<li>
+				<span class="column-half-all title">
+          <span class="glyphicon glyphicon-move" aria-hidden="true"></span>
+          Agency registration number
+        </span>
+				<strong class="column-half-all info ng-binding"></strong>
+			</li>
+			<li>
+				<span class="column-half-all title">
+          <span class="glyphicon glyphicon-move" aria-hidden="true"></span>
+          Agency registered address
+        </span>
+				<strong class="column-half-all info ng-binding">United Kingdom</strong>
+			</li>
+		</ul>
+
+	</div>
 
 
-    </div>
 
-    <div class="schedule-section">
-      <h3><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Section Title</h3>
-      <ul class="list-group">
-        <li class="list-group-item"><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Drag my handle</li>
-        <li class="list-group-item"><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Select text freely</li>
-        <li class="list-group-item"><span class="glyphicon glyphicon-move" aria-hidden="true"></span> Best of both worlds</li>
-      </ul>
-    </div>
-  </div>
+
+
+  <table class="js-sorted-table table table-hover">
+    <tbody>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="js-sorted-table table table-hover">
+    <tbody>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+      <tr>
+        <td class="js-drag-row"><span class="glyphicon glyphicon-move" aria-hidden="true"></span></td>
+        <td>Label</td>
+        <td>Entry</td>
+      </tr>
+    </tbody>
+  </table>
 
   <h2>Terms</h2>
 
+  <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
-  <!-- Sortable for drag and drop -->
-  <script src="http://rubaxa.github.io/Sortable/Sortable.js"></script>
-  <script>
-      var sortClass = document.getElementById('drag-table');
-
-      Sortable.create(sortClass, {
-        handle: '.js-drag-row',
-        animation: 150
-      });
+  <script src='js/jquery-sortable.js'></script>
+  <script type="text/javascript">
+    $(function  () {
+      $("ul.js-sortable").sortable();
+    });
 
 
+    // Sortable rows
+  $('.js-sorted-table').sortable({
+    containerSelector: 'table',
+    itemPath: '> tbody',
+    itemSelector: 'tr',
+    handle: 'span.glyphicon-move'
+  });
   </script>
+
 
 </body>
 </html>
