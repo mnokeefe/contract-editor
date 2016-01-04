@@ -1,8 +1,8 @@
 var gulp = require('gulp'),
-        sass = require('gulp-ruby-sass'),
-        autoprefixer = require('gulp-autoprefixer'),
-        minifycss = require('gulp-minify-css'),
-        rename = require('gulp-rename');
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    rename = require('gulp-rename');
 
 gulp.task('express', function() {
   var express = require('express');
@@ -40,6 +40,7 @@ gulp.task('watch', function() {
   gulp.watch('sass/*.scss', ['styles']);
   gulp.watch('*.html', notifyLiveReload);
   gulp.watch('css/*.css', notifyLiveReload);
+  gulp.watch('js/*.js', notifyLiveReload);
 });
 
 gulp.task('default', ['styles', 'express', 'livereload', 'watch'], function() {
