@@ -32,6 +32,16 @@ body {
   margin-bottom: 1em;
 }
 
+.table td:first-child {
+  width: 30px;
+}
+.table td:nth-child(2) {
+  width: 40%;
+}
+.table td:last-child {
+  width: 30px;
+}
+
 ol {
   counter-reset: num;
 }

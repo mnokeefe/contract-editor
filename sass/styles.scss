@@ -13,6 +13,18 @@ body {
     margin-bottom: 1em;
 }
 
+.table {
+  td:first-child {
+    width: 30px;
+  }
+  td:nth-child(2) {
+    width: 40%;
+  }
+  td:last-child {
+    width: 30px;
+  }
+}
+
 // Terms
 
 ol {
