@@ -34,6 +34,9 @@ body {
   font-size: 1.4em;
 }
 
+.table {
+  margin-bottom: 0;
+}
 .table td:first-child {
   width: 30px;
 }
