@@ -11,7 +11,9 @@ body.dragging, body.dragging * {
 
 ul.js-sortable li.placeholder {
   position: relative;
-  /** More li styles **/
+  background: $grey;
+  height: 30px;
+  width: 100%;
 }
 
 ul.js-sortable li.placeholder:before {

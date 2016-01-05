@@ -1,6 +1,7 @@
 // Schedule
 $('.js-sortable').sortable({
-  handle: 'span.glyphicon-move'
+  handle: 'span.glyphicon-move',
+  placeholder: '<li class="placeholder"></li>'
 });
 
 // Terms
