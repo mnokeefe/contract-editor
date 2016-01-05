@@ -49,7 +49,7 @@ gulp.task('templates', function() {
 
 gulp.task('watch', function() {
   gulp.watch('src/*.jade',['templates']);
-  gulp.watch('src/sass/*.scss', ['styles']);
+  gulp.watch('src/sass/**/*.scss', ['styles']);
   gulp.watch('dist/*.html', notifyLiveReload);
   gulp.watch('dist/css/*.css', notifyLiveReload);
   gulp.watch('dist/js/*.js', notifyLiveReload);

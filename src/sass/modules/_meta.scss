@@ -1,0 +1,10 @@
+.meta {
+  background: $grey;
+  padding: 2em;
+  &__title {
+    font-size: 1.2em;
+  }
+  &__person span {
+    font-weight: bold;
+  }
+}
