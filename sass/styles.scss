@@ -8,9 +8,11 @@ body {
 
 // Schedule
 .schedule-group {
-    border: 1px solid $grey;
-    padding: 1em 2em;
-    margin-bottom: 1em;
+    border-top: 1px solid #222;
+    margin-bottom: 2em;
+    h3 {
+      font-size: 1.4em;
+    }
 }
 
 .table {
