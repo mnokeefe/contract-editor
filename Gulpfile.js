@@ -1,14 +1,14 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
+    express = require('express'),
+    sass = require('gulp-sass'),
     minifycss = require('gulp-minify-css'),
+    jade = require('gulp-jade'),
     rename = require('gulp-rename');
 
 gulp.task('express', function() {
-  var express = require('express');
   var app = express();
   app.use(require('connect-livereload')({port: 35729}));
-  app.use(express.static(__dirname));
+  app.use(express.static(__dirname + '/dist/'));
   app.listen(4000, '0.0.0.0');
 });
 
@@ -29,20 +29,32 @@ function notifyLiveReload(event) {
 }
 
 gulp.task('styles', function() {
-  return sass('sass', { style: 'expanded' })
-    .pipe(gulp.dest('css'))
-    .pipe(rename({suffix: '.min'}))
+  return gulp.src('src/sass/*.scss')
+    .pipe(
+      sass({
+        includePaths: ['src/sass'],
+        errLogToConsole: true
+      }))
     .pipe(minifycss())
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest('dist/css/'))
+});
+
+gulp.task('templates', function() {
+  return gulp.src('src/*.jade')
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest('dist/'))
 });
 
 gulp.task('watch', function() {
-  gulp.watch('sass/*.scss', ['styles']);
-  gulp.watch('*.html', notifyLiveReload);
-  gulp.watch('css/*.css', notifyLiveReload);
-  gulp.watch('js/*.js', notifyLiveReload);
+  gulp.watch('src/*.jade',['templates']);
+  gulp.watch('src/sass/*.scss', ['styles']);
+  gulp.watch('dist/*.html', notifyLiveReload);
+  gulp.watch('dist/css/*.css', notifyLiveReload);
+  gulp.watch('dist/js/*.js', notifyLiveReload);
 });
 
-gulp.task('default', ['styles', 'express', 'livereload', 'watch'], function() {
+gulp.task('default', ['styles', 'express', 'templates', 'livereload', 'watch'], function() {
 
 });
