@@ -26,33 +26,10 @@ body {
   max-width: 1020px;
 }
 
-.column-half-all {
-  float: left;
-  width: 50%;
-}
-
-.information-details {
-  list-style: none;
-  padding: 0;
-}
-.information-details li {
-  border-top: 1px solid #ddd;
-  padding: 10px 0 30px 0;
-}
-
-.grouping {
-  border: 1px solid #222;
-  margin-bottom: 10px;
-  padding: 20px;
-}
-.grouping h3 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.schedule {
-  list-style: none;
-  padding: 0;
+.schedule-group {
+  border: 1px solid #ddd;
+  padding: 1em 2em;
+  margin-bottom: 1em;
 }
 
 ol {
