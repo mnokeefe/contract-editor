@@ -8,14 +8,15 @@ body.dragging, body.dragging * {
   z-index: 2000;
 }
 
-ul.js-sortable li.placeholder {
+.placeholder {
   position: relative;
   background: #ddd;
   height: 30px;
   width: 100%;
+  display: block;
 }
 
-ul.js-sortable li.placeholder:before {
+.placeholder:before {
   position: absolute;
   /** Define arrowhead **/
 }

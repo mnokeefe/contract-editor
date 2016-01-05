@@ -1,12 +1,23 @@
 // Schedule
 $('.js-sortable').sortable({
-  handle: 'span.glyphicon-move',
-  placeholder: '<li class="placeholder"></li>'
+  containerSelector: 'section',
+  itemSelector: 'div',
+  handle: 'span.js-table-handle',
+  placeholder: '<div class="placeholder"></div>'
+});
+
+// as table
+$('.js-sort-table').sortable({
+  containerSelector: 'table',
+  itemPath: '> tbody',
+  itemSelector: 'tr',
+  placeholder: '<tr class="placeholder"/>',
+  handle: '.glyphicon-move'
 });
 
 // Terms
 $('.js-sortable-terms').sortable({
-  handle: 'span.glyphicon-move'
+  handle: '.glyphicon-move'
 });
 
 $(".js-add-item").click(function() {
